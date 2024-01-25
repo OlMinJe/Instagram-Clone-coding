@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #c6c6c6;
+}
+
+ul,
+li,
+ol {
+  list-style-type: none;
+}
+
+.wrap {
+  width: 375px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+}
+
+.feedContainer {
+  width: 100%;
+  height: 500px;
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 375px 1fr;
+  grid-template-areas:
+    'feedHeader'
+    'feedImg'
+    'feedFooter';
+}
+
+/* feedHeader */
+.feedHeader {
+  grid-area: feedHeader;
+  width: auto;
+  height: auto;
+  margin: 5px 10px;
+  font-weight: bold;
+}
+
+.headerLeft {
+  float: left;
+  display: flex;
+  align-items: center;
+}
+
+.headerImg {
+  border-radius: 50%;
+}
+
+.hederRight {
+  float: right;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.rigthMenu {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* feedImg */
+.feedImg {
+  clear: both;
+  grid-area: feedImg;
+  background-image: url();
+  background-size: cover;
+}
+
+/* feedFooter */
+.footerLeft,
+.footerCenter,
+.footerRight {
+  font-size: 10px;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.feedImg,
+.feedFooter {
+  width: 100%;
+  height: 100%;
+}
+
+.feedFooter {
+  grid-area: feedFooter;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 50px auto auto;
+  grid-template-areas:
+    'footerLeft footerCenter footerRight'
+    'like like like'
+    'comment comment comment';
+}
+
+.footerLeft {
+  grid-area: footerLeft;
+}
+
+.footerCenter {
+  grid-area: footerCenter;
+}
+
+.footerCenter ul {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.footerCenter li {
+  width: 7px;
+  height: 7px;
+  background-color: lightgray;
+  border-radius: 50%;
+}
+
+.feedContainer li.active {
+  background-color: skyblue;
+}
+
+.footerRight {
+  grid-area: footerRight;
+}
+
+.like {
+  grid-area: like;
+  margin: 0 10px;
+  font-size: 12px;
+}
+
+.comment {
+  grid-area: comment;
+  margin: 0 10px;
+  font-size: 10px;
+}
